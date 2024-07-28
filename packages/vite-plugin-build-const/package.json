@@ -1,6 +1,6 @@
 {
   "name": "@sexnine/vite-plugin-build-const",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Vite plugin for build-time constants",
   "types": "dist/index.d.ts",
   "scripts": {

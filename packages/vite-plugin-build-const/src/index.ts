@@ -21,6 +21,11 @@ const plugin = (config: Config = {}) => {
     name: "vite-plugin-build-const",
     async load(id: string) {
       if (id.endsWith(config.extension ?? ".const.js")) {
+        const cached = transformedCache.get(id);
+        if (cached) {
+          return cached;
+        }
+
         const module = await import(`file:///${id}`);
         const transformed = transformModule(module);
 
