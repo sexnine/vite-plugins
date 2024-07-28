@@ -1,0 +1,19 @@
+{
+  "name": "@sexnine/vite-plugins",
+  "version": "1.0.0",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pnpm run --filter \"./packages/*\" build"
+  },
+  "author": "sexnine",
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "esbuild": "^0.23.0",
+    "tsup": "^8.2.3",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.4",
+    "vite": "^5.3.5"
+  }
+}

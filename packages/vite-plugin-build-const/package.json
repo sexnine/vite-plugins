@@ -1,0 +1,32 @@
+{
+  "name": "@sexnine/vite-plugin-build-const",
+  "version": "1.0.1",
+  "description": "Vite plugin for build-time constants",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "pnpm run build:esm && pnpm run build:cjs && pnpm run build:types",
+    "build:esm": "esbuild ./src/index.ts --outfile=dist/index.mjs --format=esm",
+    "build:cjs": "esbuild ./src/index.ts --outfile=dist/index.cjs --format=cjs",
+    "build:types": "tsup ./src/index.ts --dts-only --out-dir dist",
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sexnine/vite-plugins.git"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "author": "sexnine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sexnine/vite-plugins/issues"
+  },
+  "dependencies": {
+    "devalue": "^5.0.0"
+  }
+}
